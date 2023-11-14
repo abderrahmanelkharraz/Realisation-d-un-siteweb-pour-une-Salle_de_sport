@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <title>Fitzone</title>
+<body>
+    <header>
+        <nav> 
+            <div class="navbar">
+                <h2>FitZone</h2>
+
+            <ul class="navbar">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="inscription.html">Inscriptions</a></li>
+        </ul>
+     </div>
+        </nav>
+    </header>
+    <div id="cardContainer"></div>
+
+     <footer>
+        <div>
+            20 ANGLE RUE NATIONALE QU PARIS. SAFI <br>
+            0655464624 : info@fitzone.com
+        </div>
+        <div>
+            Copyright ©2023 All rights reserved | FitZone
+        </div>
+    </footer>
+         <script>
+            const items = [
+                {
+                    imgSrc: 'img/Gants-de-Musculation-et-Crossfit-RDX 1.png',
+                    title: 'Musculation, Cardio',
+                    schedule: 'Monday & Wednesday 9:00 am - 5:00 pm'
+                },
+                {
+                    imgSrc: 'img/AdobeStock_145480348-1-1024x683 1.png',
+                    title: 'Boxe',
+                    schedule: 'Monday - Sunday 8:00 am - 9:00 pm'
+                },
+                {
+                    imgSrc: 'img/Maza_izmera_crosstraining 1.png',
+                    title: 'Cross-Training',
+                    schedule: 'Tuesday - Thursday 11:00 am - 7:00 pm'
+                },
+                
+                
+            ];
+    
+            const cardContainer = document.getElementById('cardContainer');
+             
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+    
+                const img = document.createElement('img');
+                img.src = item.imgSrc;
+                img.alt = '';
+    
+                const h2 = document.createElement('h2');
+                h2.innerHTML = `${item.title}<br>${item.schedule}`;
+    
+                card.appendChild(img);
+                card.appendChild(h2);
+                cardContainer.appendChild(card);
+            });
+        </script>
+</body>
+</head>
+<html>

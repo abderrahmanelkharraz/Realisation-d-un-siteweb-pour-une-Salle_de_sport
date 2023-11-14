@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Fitzone</title>
+    <style>
+        section {
+            margin-top: 350px;
+            margin-left: 20%;
+        }
+
+        .accordion {
+            margin: 30px ;
+        }
+
+        .accordion h3 {
+            color: #ffffff;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .accordion p {
+            font-size: 1rem;
+            color: #ffffff;
+            opacity: .5;
+            padding: 20px;
+        }
+
+        .answer {
+            overflow: hidden;
+            height: 0;
+            transition: .5s;
+        }
+        h4{
+            color: #fffdfd;
+            font-size: 35px;
+            text-align: center;
+            margin-right: 30%;
+            margin-bottom: 100px;
+        }
+        p{
+            color: #ffffff;
+        }   
+    </style>
+</head>
+<body>
+    <nav> 
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div> 
+        <nav class="navbar" id="navbar">
+            <h2>FitZone</h2>
+            <ul class="navbar">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="inscription.html">Inscriptions</a></li>
+            </ul>
+        </nav>
+    </nav>
+    <h1>FITZONE</h1>
+    <h2>SALLE DE SPORT HAUT DE GAMME,
+        <br> CARDIO, CROSS-TRAINING,
+        <br> EN ACCÈS ILLIMITÉ
+    </h2>
+    <div class="desc">
+        <img src="img/img1.png" alt="">
+        <p>Bienvenue dans notre salle de sport, un lieu conçu<br> pour vous aider à atteindre
+            vos objectifs de remise en forme.<br> Notre équipement de pointe, nos instructeurs
+            qualifiés<br> et notre atmosphère énergisante vous accompagnent<br> dans votre parcours<br> de 
+            transformation physique et mentale.<br> Que vous soyez débutant ou athlète chevronné,<br>
+            notre salle de sport offre une variété d'installations,<br> des cours collectifs
+            et un esprit de communauté.<br> Rejoignez-nous pour repousser vos limites et<br>
+            devenir la meilleure version de vous-même.</p>
+    </div>
+
+    <section>
+        <h4>FOIRE AUX QUESTIONS</h4>
+        <div class="accordion">
+            <div class="question">
+                <h3>QUEL EST LE PRIX DE L’ABONNEMENT ?</h3>
+            </div>
+            <div class="answer">
+                <p>Le tarif est de 34,90€ par mois.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="question">
+                <h3>PEUT-ON VENIR FAIRE UNE SÉANCE DÉCOUVERTE ?</h3>
+            </div>
+            <div class="answer">
+                <p>Oui, il est possible de venir faire une séance découverte. Il suffit de nous prévenir en amont par email. La séance est facturée 10€. Celle-ci est remboursée en cas d’inscription suite à la séance.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="question">
+                <h3>JE SUIS UNE FEMME, LA MUSCULATION EST-ELLE FAITE POUR MOI ?</h3>
+            </div>
+            <div class="answer">
+                <p>Oui ! La musculation n’est pas du tout réservée aux hommes et va te permettre de t’affiner, te tonifier, te renforcer, sculpter ta silhouette, tout en restant féminine. C’est le complément indispensable aux cours collectifs et aux cours de cardio training.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            20 ANGLE RUE NATIONALE QU PARIS. SAFI <br>
+            0655464624 : info@fitzone.com
+        </div>
+        <div>
+            Copyright © 2023 All rights reserved | FitZone
+        </div>
+    </footer>
+
+    <script>
+        'use strict';
+
+        const accordion = document.querySelectorAll('.accordion h3');
+        let mainParent;
+        let height;
+        let answer;
+        accordion.forEach(item => {
+            item.addEventListener('click', () => {
+                height = item.parentElement.nextElementSibling.firstElementChild.offsetHeight;
+                answer = item.parentElement.nextElementSibling;
+                mainParent = item.parentElement.parentElement;
+                if (mainParent.classList.contains('active')) {
+                    mainParent.classList.remove('active');
+                    answer.style.height = `0px`;
+                } else { 
+                    mainParent.classList.add('active');
+                    answer.style.height = `${height}px`;
+                }
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>

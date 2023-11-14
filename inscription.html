@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FitZone</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+          <h2>FitZone</h2>
+
+          <ul class="navbar">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="inscription.html">Inscriptions</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <h1>Inscriver-vous</h1>
+    <form action="" id="registration-form">
+      <div class="list">
+        <label for="Nom-Prenom">Nom-Prenom:</label>
+        <input type="Nom-Prenom" id="np" name="Nom-Prenom"  /><br />
+
+        <label for="numéro de carte d'identité"
+          >Numéro de carte d'identité:</label
+        >
+        <input
+          type="text"
+          id="cin"
+          name="text"
+        /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  /><br />
+
+        <label for="Numéro de téléphone">Numéro de téléphone:</label>
+        <input
+          type="phone"
+          id="phone"
+          name="phone"
+          
+        /><br />
+        <button type="submit" id="a">Enregistrer</button>
+      </div>
+    </form>
+    <footer>
+      <div>
+        20 ANGLE RUE NATIONALE QU PARIS. SAFI <br />
+        0655464624 : info@fitzone.com
+      </div>
+      <div>Copyright ©2023 All rights reserved | FitZone</div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("registration-form");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const np = document.getElementById("np");
+          const cin = document.getElementById("cin");
+          const phone = document.getElementById("phone");
+
+          const phoneRegEx = /\+212[0-9]{9}/;
+          if (!phoneRegEx.test(phone.value)) {
+            alert("numero icorrect");
+            return;
+          }
+          if (cin.value.length>8||cin.value.length<4||cin.value.length==0) {
+            alert("cin invalide");
+            return;
+          }
+
+          alert("Registration confirmed.");
+        });
+      });
+    </script>
+    
+  </body>
+</html>
